@@ -31,6 +31,7 @@ const interceptedTypes: BrowserRequestType[] = ['xhr', 'fetch'];
 export interface MockiavelliOptions {
     debug: boolean;
     baseUrl: string;
+    ignoreTrailingSlashes: boolean;
 }
 
 export class Mockiavelli {
@@ -51,6 +52,13 @@ export class Mockiavelli {
         if (options.debug) {
             dbg.enable('mockiavelli:*');
         }
+
+        if (options.ignoreTrailingSlashes){
+            // let pageURL = page.getURL();
+            // pageURL = pageURL.replace(/\/+$/, "");
+            // page.setURL(pageURL)
+        }
+
         debug('Initialized');
     }
 
